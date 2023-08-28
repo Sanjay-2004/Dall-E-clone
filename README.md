@@ -45,7 +45,7 @@ Follow these steps to set up and run the project locally:
    $ npm start
 
 4. Usage
-Once the project is up and running, open your web browser and visit http://localhost:3000 to access the Dall-E Clone. Enter prompts and explore the AI-generated images that are displayed based on those prompts.
+Once the project is up and running, open your web browser to access the Dall-E Clone. Enter prompts and explore the AI-generated images that are displayed based on those prompts.
 
 
 In this version, the installation instructions are grouped together, and each step is followed by its
