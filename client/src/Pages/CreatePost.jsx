@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { preview } from '../assets';
@@ -8,22 +8,69 @@ import Loader from '../Components/Loader';
 
 const CreatePost = () => {
     const navigate = useNavigate();
-    const [form, setForm] = React.useState({
+    const [form, setForm] = useState({
         name: '',
         prompt: '',
         photo: '',
     });
-    const [generating, setGenerating] = React.useState(false);
-    const [loading, setLoading] = React.useState(false);
+    const [generating, setGenerating] = useState(false);
+    const [loading, setLoading] = useState(false);
 
-    const generateImage = () => { };
-    const handleSubmit = (e) => { };
-    const handleChange = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
-    };
+    const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
     const handleSurpriseMe = () => {
         const randomPrompt = getRandom(form.prompt);
         setForm({ ...form, prompt: randomPrompt });
+    };
+
+    const generateImage = async () => {
+        if (form.prompt) {
+            try {
+                setGenerating(true);
+                const response = await fetch('http://localhost:8080/api/dalle', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ prompt: form.prompt }),
+                });
+                const data = await response.json();
+                setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
+            } catch (err) {
+                console.log(err);
+                alert(err);
+            } finally {
+                setGenerating(false);
+            }
+        } else {
+            alert('Please enter a prompt');
+        }
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (form.prompt && form.photo) {
+            setLoading(true);
+            try {
+                const response = await fetch('http://localhost:8080/api/posts', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(form),
+                });
+                await response.json();
+                navigate('/');
+            } catch (err) {
+                console.log(err);
+                alert(err);
+            } finally {
+                setLoading(false);
+            }
+        } else {
+            alert('Please enter a prompt and generate an image');
+        }
     };
 
     return (
