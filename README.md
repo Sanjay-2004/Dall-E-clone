@@ -42,4 +42,3 @@ Follow these steps to set up and run the project locally:
 Once the project is up and running, open your web browser to access the Dall-E Clone. Enter prompts and explore the AI-generated images that are displayed based on those prompts.
 
 
-In this version, the installation instructions are grouped together, and each step is followed by its
