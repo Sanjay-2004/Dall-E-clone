@@ -17,12 +17,6 @@ Follow these steps to set up and run the project locally:
 
 1. Clone the repository:
 
-   ## Installation
-
-Follow these steps to set up and run the project locally:
-
-1. Clone the repository:
-
    ```bash
    $ git clone https://github.com/yourusername/dall-e-clone.git
 
