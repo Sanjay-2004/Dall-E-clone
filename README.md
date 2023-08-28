@@ -25,26 +25,27 @@ Follow these steps to set up and run the project locally:
 
    ```bash
    $ git clone https://github.com/yourusername/dall-e-clone.git
-Navigate to the client and server folders and install dependencies:
 
-bash
-Copy code
-$ cd dall-e-clone/client
-$ npm install
-$ cd ../server
-$ npm install
-Start the client and server:
+2. Navigate to the client and server folders and install dependencies:
 
-bash
-Copy code
-$ cd client
-$ npm start
-$ cd ../server
-$ npm start
-Usage
+   Copy code
+   ```bash
+   $ cd dall-e-clone/client
+   $ npm install
+   $ cd ../server
+   $ npm install
+
+3. Start the client and server:
+   
+   Copy code
+   ```bash
+   $ cd client
+   $ npm start
+   $ cd ../server
+   $ npm start
+
+4. Usage
 Once the project is up and running, open your web browser and visit http://localhost:3000 to access the Dall-E Clone. Enter prompts and explore the AI-generated images that are displayed based on those prompts.
 
-kotlin
-Copy code
 
 In this version, the installation instructions are grouped together, and each step is followed by its
