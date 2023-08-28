@@ -1,14 +1,29 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "type": "module",
+  "description": "A clone of Dall-E, an OpenAI project that generates images from text captions.",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "openai",
+    "dall-e",
+    "image",
+    "caption",
+    "text",
+    "generation",
+    "api",
+    "server",
+    "backend",
+    "express",
+    "mongoose",
+    "cloudinary",
+    "cors"
+  ],
+  "author": "Sanjay Agamamidi",
   "license": "ISC",
   "dependencies": {
     "cloudinary": "^1.40.0",
